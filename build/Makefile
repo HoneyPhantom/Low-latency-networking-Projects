@@ -142,6 +142,19 @@ client/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
 .PHONY : client/fast
 
+#=============================================================================
+# Target rules for targets named nbserver
+
+# Build rule for target.
+nbserver: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 nbserver
+.PHONY : nbserver
+
+# fast build rule for target.
+nbserver/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbserver.dir/build.make CMakeFiles/nbserver.dir/build
+.PHONY : nbserver/fast
+
 client.o: client.cpp.o
 .PHONY : client.o
 
@@ -165,6 +178,30 @@ client.s: client.cpp.s
 client.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/client.cpp.s
 .PHONY : client.cpp.s
+
+non-blocking-server.o: non-blocking-server.cpp.o
+.PHONY : non-blocking-server.o
+
+# target to build an object file
+non-blocking-server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbserver.dir/build.make CMakeFiles/nbserver.dir/non-blocking-server.cpp.o
+.PHONY : non-blocking-server.cpp.o
+
+non-blocking-server.i: non-blocking-server.cpp.i
+.PHONY : non-blocking-server.i
+
+# target to preprocess a source file
+non-blocking-server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbserver.dir/build.make CMakeFiles/nbserver.dir/non-blocking-server.cpp.i
+.PHONY : non-blocking-server.cpp.i
+
+non-blocking-server.s: non-blocking-server.cpp.s
+.PHONY : non-blocking-server.s
+
+# target to generate assembly for a file
+non-blocking-server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbserver.dir/build.make CMakeFiles/nbserver.dir/non-blocking-server.cpp.s
+.PHONY : non-blocking-server.cpp.s
 
 server.o: server.cpp.o
 .PHONY : server.o
@@ -199,10 +236,14 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... client"
+	@echo "... nbserver"
 	@echo "... server"
 	@echo "... client.o"
 	@echo "... client.i"
 	@echo "... client.s"
+	@echo "... non-blocking-server.o"
+	@echo "... non-blocking-server.i"
+	@echo "... non-blocking-server.s"
 	@echo "... server.o"
 	@echo "... server.i"
 	@echo "... server.s"

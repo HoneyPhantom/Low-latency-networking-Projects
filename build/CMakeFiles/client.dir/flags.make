@@ -6,7 +6,7 @@ CXX_DEFINES =
 
 CXX_INCLUDES = 
 
-CXX_FLAGSarm64 = -std=gnu++20 -arch arm64
+CXX_FLAGSarm64 = -std=gnu++20 -arch arm64 -Wall -Wextra -O3 -march=native
 
-CXX_FLAGS = -std=gnu++20 -arch arm64
+CXX_FLAGS = -std=gnu++20 -arch arm64 -Wall -Wextra -O3 -march=native
 

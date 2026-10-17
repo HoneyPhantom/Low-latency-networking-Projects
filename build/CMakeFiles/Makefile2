@@ -65,11 +65,13 @@ CMAKE_BINARY_DIR = /Users/honey/Low-latency-networking-Projects/build
 # The main recursive "all" target.
 all: CMakeFiles/server.dir/all
 all: CMakeFiles/client.dir/all
+all: CMakeFiles/nbserver.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/server.dir/codegen
 codegen: CMakeFiles/client.dir/codegen
+codegen: CMakeFiles/nbserver.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -79,6 +81,7 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/server.dir/clean
 clean: CMakeFiles/client.dir/clean
+clean: CMakeFiles/nbserver.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -88,7 +91,7 @@ clean: CMakeFiles/client.dir/clean
 CMakeFiles/server.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/honey/Low-latency-networking-Projects/build/CMakeFiles --progress-num=3,4 "Built target server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/honey/Low-latency-networking-Projects/build/CMakeFiles --progress-num=5,6 "Built target server"
 .PHONY : CMakeFiles/server.dir/all
 
 # Build rule for subdir invocation for target.
@@ -105,7 +108,7 @@ server: CMakeFiles/server.dir/rule
 # codegen rule for target.
 CMakeFiles/server.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/honey/Low-latency-networking-Projects/build/CMakeFiles --progress-num=3,4 "Finished codegen for target server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/honey/Low-latency-networking-Projects/build/CMakeFiles --progress-num=5,6 "Finished codegen for target server"
 .PHONY : CMakeFiles/server.dir/codegen
 
 # clean rule for target.
@@ -144,6 +147,38 @@ CMakeFiles/client.dir/codegen:
 CMakeFiles/client.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/clean
 .PHONY : CMakeFiles/client.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/nbserver.dir
+
+# All Build rule for target.
+CMakeFiles/nbserver.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbserver.dir/build.make CMakeFiles/nbserver.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbserver.dir/build.make CMakeFiles/nbserver.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/honey/Low-latency-networking-Projects/build/CMakeFiles --progress-num=3,4 "Built target nbserver"
+.PHONY : CMakeFiles/nbserver.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/nbserver.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/honey/Low-latency-networking-Projects/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/nbserver.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/honey/Low-latency-networking-Projects/build/CMakeFiles 0
+.PHONY : CMakeFiles/nbserver.dir/rule
+
+# Convenience name for target.
+nbserver: CMakeFiles/nbserver.dir/rule
+.PHONY : nbserver
+
+# codegen rule for target.
+CMakeFiles/nbserver.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbserver.dir/build.make CMakeFiles/nbserver.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/honey/Low-latency-networking-Projects/build/CMakeFiles --progress-num=3,4 "Finished codegen for target nbserver"
+.PHONY : CMakeFiles/nbserver.dir/codegen
+
+# clean rule for target.
+CMakeFiles/nbserver.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbserver.dir/build.make CMakeFiles/nbserver.dir/clean
+.PHONY : CMakeFiles/nbserver.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
