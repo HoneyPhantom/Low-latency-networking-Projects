@@ -143,6 +143,19 @@ client/fast:
 .PHONY : client/fast
 
 #=============================================================================
+# Target rules for targets named kqserver
+
+# Build rule for target.
+kqserver: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kqserver
+.PHONY : kqserver
+
+# fast build rule for target.
+kqserver/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kqserver.dir/build.make CMakeFiles/kqserver.dir/build
+.PHONY : kqserver/fast
+
+#=============================================================================
 # Target rules for targets named nbserver
 
 # Build rule for target.
@@ -154,6 +167,32 @@ nbserver: cmake_check_build_system
 nbserver/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbserver.dir/build.make CMakeFiles/nbserver.dir/build
 .PHONY : nbserver/fast
+
+#=============================================================================
+# Target rules for targets named sender
+
+# Build rule for target.
+sender: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sender
+.PHONY : sender
+
+# fast build rule for target.
+sender/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sender.dir/build.make CMakeFiles/sender.dir/build
+.PHONY : sender/fast
+
+#=============================================================================
+# Target rules for targets named receiver
+
+# Build rule for target.
+receiver: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 receiver
+.PHONY : receiver
+
+# fast build rule for target.
+receiver/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/receiver.dir/build.make CMakeFiles/receiver.dir/build
+.PHONY : receiver/fast
 
 client.o: client.cpp.o
 .PHONY : client.o
@@ -179,29 +218,53 @@ client.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/client.cpp.s
 .PHONY : client.cpp.s
 
-non-blocking-server.o: non-blocking-server.cpp.o
-.PHONY : non-blocking-server.o
+receiver.o: receiver.cpp.o
+.PHONY : receiver.o
 
 # target to build an object file
-non-blocking-server.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbserver.dir/build.make CMakeFiles/nbserver.dir/non-blocking-server.cpp.o
-.PHONY : non-blocking-server.cpp.o
+receiver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/receiver.dir/build.make CMakeFiles/receiver.dir/receiver.cpp.o
+.PHONY : receiver.cpp.o
 
-non-blocking-server.i: non-blocking-server.cpp.i
-.PHONY : non-blocking-server.i
+receiver.i: receiver.cpp.i
+.PHONY : receiver.i
 
 # target to preprocess a source file
-non-blocking-server.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbserver.dir/build.make CMakeFiles/nbserver.dir/non-blocking-server.cpp.i
-.PHONY : non-blocking-server.cpp.i
+receiver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/receiver.dir/build.make CMakeFiles/receiver.dir/receiver.cpp.i
+.PHONY : receiver.cpp.i
 
-non-blocking-server.s: non-blocking-server.cpp.s
-.PHONY : non-blocking-server.s
+receiver.s: receiver.cpp.s
+.PHONY : receiver.s
 
 # target to generate assembly for a file
-non-blocking-server.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbserver.dir/build.make CMakeFiles/nbserver.dir/non-blocking-server.cpp.s
-.PHONY : non-blocking-server.cpp.s
+receiver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/receiver.dir/build.make CMakeFiles/receiver.dir/receiver.cpp.s
+.PHONY : receiver.cpp.s
+
+sender.o: sender.cpp.o
+.PHONY : sender.o
+
+# target to build an object file
+sender.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sender.dir/build.make CMakeFiles/sender.dir/sender.cpp.o
+.PHONY : sender.cpp.o
+
+sender.i: sender.cpp.i
+.PHONY : sender.i
+
+# target to preprocess a source file
+sender.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sender.dir/build.make CMakeFiles/sender.dir/sender.cpp.i
+.PHONY : sender.cpp.i
+
+sender.s: sender.cpp.s
+.PHONY : sender.s
+
+# target to generate assembly for a file
+sender.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sender.dir/build.make CMakeFiles/sender.dir/sender.cpp.s
+.PHONY : sender.cpp.s
 
 server.o: server.cpp.o
 .PHONY : server.o
@@ -227,6 +290,54 @@ server.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server.cpp.s
 .PHONY : server.cpp.s
 
+server_kqueue.o: server_kqueue.cpp.o
+.PHONY : server_kqueue.o
+
+# target to build an object file
+server_kqueue.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kqserver.dir/build.make CMakeFiles/kqserver.dir/server_kqueue.cpp.o
+.PHONY : server_kqueue.cpp.o
+
+server_kqueue.i: server_kqueue.cpp.i
+.PHONY : server_kqueue.i
+
+# target to preprocess a source file
+server_kqueue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kqserver.dir/build.make CMakeFiles/kqserver.dir/server_kqueue.cpp.i
+.PHONY : server_kqueue.cpp.i
+
+server_kqueue.s: server_kqueue.cpp.s
+.PHONY : server_kqueue.s
+
+# target to generate assembly for a file
+server_kqueue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kqserver.dir/build.make CMakeFiles/kqserver.dir/server_kqueue.cpp.s
+.PHONY : server_kqueue.cpp.s
+
+server_non-blocking.o: server_non-blocking.cpp.o
+.PHONY : server_non-blocking.o
+
+# target to build an object file
+server_non-blocking.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbserver.dir/build.make CMakeFiles/nbserver.dir/server_non-blocking.cpp.o
+.PHONY : server_non-blocking.cpp.o
+
+server_non-blocking.i: server_non-blocking.cpp.i
+.PHONY : server_non-blocking.i
+
+# target to preprocess a source file
+server_non-blocking.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbserver.dir/build.make CMakeFiles/nbserver.dir/server_non-blocking.cpp.i
+.PHONY : server_non-blocking.cpp.i
+
+server_non-blocking.s: server_non-blocking.cpp.s
+.PHONY : server_non-blocking.s
+
+# target to generate assembly for a file
+server_non-blocking.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbserver.dir/build.make CMakeFiles/nbserver.dir/server_non-blocking.cpp.s
+.PHONY : server_non-blocking.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -236,17 +347,29 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... client"
+	@echo "... kqserver"
 	@echo "... nbserver"
+	@echo "... receiver"
+	@echo "... sender"
 	@echo "... server"
 	@echo "... client.o"
 	@echo "... client.i"
 	@echo "... client.s"
-	@echo "... non-blocking-server.o"
-	@echo "... non-blocking-server.i"
-	@echo "... non-blocking-server.s"
+	@echo "... receiver.o"
+	@echo "... receiver.i"
+	@echo "... receiver.s"
+	@echo "... sender.o"
+	@echo "... sender.i"
+	@echo "... sender.s"
 	@echo "... server.o"
 	@echo "... server.i"
 	@echo "... server.s"
+	@echo "... server_kqueue.o"
+	@echo "... server_kqueue.i"
+	@echo "... server_kqueue.s"
+	@echo "... server_non-blocking.o"
+	@echo "... server_non-blocking.i"
+	@echo "... server_non-blocking.s"
 .PHONY : help
 
 

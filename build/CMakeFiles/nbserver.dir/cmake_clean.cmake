@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/nbserver.dir/non-blocking-server.cpp.o"
-  "CMakeFiles/nbserver.dir/non-blocking-server.cpp.o.d"
+  "CMakeFiles/nbserver.dir/server_non-blocking.cpp.o"
+  "CMakeFiles/nbserver.dir/server_non-blocking.cpp.o.d"
   "nbserver"
   "nbserver.pdb"
 )

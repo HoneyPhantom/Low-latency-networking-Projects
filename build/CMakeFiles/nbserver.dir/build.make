@@ -72,28 +72,28 @@ include CMakeFiles/nbserver.dir/flags.make
 CMakeFiles/nbserver.dir/codegen:
 .PHONY : CMakeFiles/nbserver.dir/codegen
 
-CMakeFiles/nbserver.dir/non-blocking-server.cpp.o: CMakeFiles/nbserver.dir/flags.make
-CMakeFiles/nbserver.dir/non-blocking-server.cpp.o: /Users/honey/Low-latency-networking-Projects/non-blocking-server.cpp
-CMakeFiles/nbserver.dir/non-blocking-server.cpp.o: CMakeFiles/nbserver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/honey/Low-latency-networking-Projects/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/nbserver.dir/non-blocking-server.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/nbserver.dir/non-blocking-server.cpp.o -MF CMakeFiles/nbserver.dir/non-blocking-server.cpp.o.d -o CMakeFiles/nbserver.dir/non-blocking-server.cpp.o -c /Users/honey/Low-latency-networking-Projects/non-blocking-server.cpp
+CMakeFiles/nbserver.dir/server_non-blocking.cpp.o: CMakeFiles/nbserver.dir/flags.make
+CMakeFiles/nbserver.dir/server_non-blocking.cpp.o: /Users/honey/Low-latency-networking-Projects/server_non-blocking.cpp
+CMakeFiles/nbserver.dir/server_non-blocking.cpp.o: CMakeFiles/nbserver.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/honey/Low-latency-networking-Projects/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/nbserver.dir/server_non-blocking.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/nbserver.dir/server_non-blocking.cpp.o -MF CMakeFiles/nbserver.dir/server_non-blocking.cpp.o.d -o CMakeFiles/nbserver.dir/server_non-blocking.cpp.o -c /Users/honey/Low-latency-networking-Projects/server_non-blocking.cpp
 
-CMakeFiles/nbserver.dir/non-blocking-server.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/nbserver.dir/non-blocking-server.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/honey/Low-latency-networking-Projects/non-blocking-server.cpp > CMakeFiles/nbserver.dir/non-blocking-server.cpp.i
+CMakeFiles/nbserver.dir/server_non-blocking.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/nbserver.dir/server_non-blocking.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/honey/Low-latency-networking-Projects/server_non-blocking.cpp > CMakeFiles/nbserver.dir/server_non-blocking.cpp.i
 
-CMakeFiles/nbserver.dir/non-blocking-server.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/nbserver.dir/non-blocking-server.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/honey/Low-latency-networking-Projects/non-blocking-server.cpp -o CMakeFiles/nbserver.dir/non-blocking-server.cpp.s
+CMakeFiles/nbserver.dir/server_non-blocking.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/nbserver.dir/server_non-blocking.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/honey/Low-latency-networking-Projects/server_non-blocking.cpp -o CMakeFiles/nbserver.dir/server_non-blocking.cpp.s
 
 # Object files for target nbserver
 nbserver_OBJECTS = \
-"CMakeFiles/nbserver.dir/non-blocking-server.cpp.o"
+"CMakeFiles/nbserver.dir/server_non-blocking.cpp.o"
 
 # External object files for target nbserver
 nbserver_EXTERNAL_OBJECTS =
 
-nbserver: CMakeFiles/nbserver.dir/non-blocking-server.cpp.o
+nbserver: CMakeFiles/nbserver.dir/server_non-blocking.cpp.o
 nbserver: CMakeFiles/nbserver.dir/build.make
 nbserver: CMakeFiles/nbserver.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/honey/Low-latency-networking-Projects/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable nbserver"

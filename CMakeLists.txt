@@ -12,4 +12,7 @@ endif()
 
 add_executable(server server.cpp)
 add_executable(client client.cpp)
-add_executable(nbserver non-blocking-server.cpp)
+add_executable(kqserver server_kqueue.cpp)
+add_executable(nbserver server_non-blocking.cpp)
+add_executable(sender sender.cpp)
+add_executable(receiver receiver.cpp)

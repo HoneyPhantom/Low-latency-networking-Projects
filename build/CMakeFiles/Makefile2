@@ -65,13 +65,19 @@ CMAKE_BINARY_DIR = /Users/honey/Low-latency-networking-Projects/build
 # The main recursive "all" target.
 all: CMakeFiles/server.dir/all
 all: CMakeFiles/client.dir/all
+all: CMakeFiles/kqserver.dir/all
 all: CMakeFiles/nbserver.dir/all
+all: CMakeFiles/sender.dir/all
+all: CMakeFiles/receiver.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/server.dir/codegen
 codegen: CMakeFiles/client.dir/codegen
+codegen: CMakeFiles/kqserver.dir/codegen
 codegen: CMakeFiles/nbserver.dir/codegen
+codegen: CMakeFiles/sender.dir/codegen
+codegen: CMakeFiles/receiver.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -81,7 +87,10 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/server.dir/clean
 clean: CMakeFiles/client.dir/clean
+clean: CMakeFiles/kqserver.dir/clean
 clean: CMakeFiles/nbserver.dir/clean
+clean: CMakeFiles/sender.dir/clean
+clean: CMakeFiles/receiver.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -91,7 +100,7 @@ clean: CMakeFiles/nbserver.dir/clean
 CMakeFiles/server.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/honey/Low-latency-networking-Projects/build/CMakeFiles --progress-num=5,6 "Built target server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/honey/Low-latency-networking-Projects/build/CMakeFiles --progress-num=11,12 "Built target server"
 .PHONY : CMakeFiles/server.dir/all
 
 # Build rule for subdir invocation for target.
@@ -108,7 +117,7 @@ server: CMakeFiles/server.dir/rule
 # codegen rule for target.
 CMakeFiles/server.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/honey/Low-latency-networking-Projects/build/CMakeFiles --progress-num=5,6 "Finished codegen for target server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/honey/Low-latency-networking-Projects/build/CMakeFiles --progress-num=11,12 "Finished codegen for target server"
 .PHONY : CMakeFiles/server.dir/codegen
 
 # clean rule for target.
@@ -149,13 +158,45 @@ CMakeFiles/client.dir/clean:
 .PHONY : CMakeFiles/client.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/kqserver.dir
+
+# All Build rule for target.
+CMakeFiles/kqserver.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kqserver.dir/build.make CMakeFiles/kqserver.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kqserver.dir/build.make CMakeFiles/kqserver.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/honey/Low-latency-networking-Projects/build/CMakeFiles --progress-num=3,4 "Built target kqserver"
+.PHONY : CMakeFiles/kqserver.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/kqserver.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/honey/Low-latency-networking-Projects/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/kqserver.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/honey/Low-latency-networking-Projects/build/CMakeFiles 0
+.PHONY : CMakeFiles/kqserver.dir/rule
+
+# Convenience name for target.
+kqserver: CMakeFiles/kqserver.dir/rule
+.PHONY : kqserver
+
+# codegen rule for target.
+CMakeFiles/kqserver.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kqserver.dir/build.make CMakeFiles/kqserver.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/honey/Low-latency-networking-Projects/build/CMakeFiles --progress-num=3,4 "Finished codegen for target kqserver"
+.PHONY : CMakeFiles/kqserver.dir/codegen
+
+# clean rule for target.
+CMakeFiles/kqserver.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kqserver.dir/build.make CMakeFiles/kqserver.dir/clean
+.PHONY : CMakeFiles/kqserver.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/nbserver.dir
 
 # All Build rule for target.
 CMakeFiles/nbserver.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbserver.dir/build.make CMakeFiles/nbserver.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbserver.dir/build.make CMakeFiles/nbserver.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/honey/Low-latency-networking-Projects/build/CMakeFiles --progress-num=3,4 "Built target nbserver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/honey/Low-latency-networking-Projects/build/CMakeFiles --progress-num=5,6 "Built target nbserver"
 .PHONY : CMakeFiles/nbserver.dir/all
 
 # Build rule for subdir invocation for target.
@@ -172,13 +213,77 @@ nbserver: CMakeFiles/nbserver.dir/rule
 # codegen rule for target.
 CMakeFiles/nbserver.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbserver.dir/build.make CMakeFiles/nbserver.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/honey/Low-latency-networking-Projects/build/CMakeFiles --progress-num=3,4 "Finished codegen for target nbserver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/honey/Low-latency-networking-Projects/build/CMakeFiles --progress-num=5,6 "Finished codegen for target nbserver"
 .PHONY : CMakeFiles/nbserver.dir/codegen
 
 # clean rule for target.
 CMakeFiles/nbserver.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbserver.dir/build.make CMakeFiles/nbserver.dir/clean
 .PHONY : CMakeFiles/nbserver.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/sender.dir
+
+# All Build rule for target.
+CMakeFiles/sender.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sender.dir/build.make CMakeFiles/sender.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sender.dir/build.make CMakeFiles/sender.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/honey/Low-latency-networking-Projects/build/CMakeFiles --progress-num=9,10 "Built target sender"
+.PHONY : CMakeFiles/sender.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/sender.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/honey/Low-latency-networking-Projects/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/sender.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/honey/Low-latency-networking-Projects/build/CMakeFiles 0
+.PHONY : CMakeFiles/sender.dir/rule
+
+# Convenience name for target.
+sender: CMakeFiles/sender.dir/rule
+.PHONY : sender
+
+# codegen rule for target.
+CMakeFiles/sender.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sender.dir/build.make CMakeFiles/sender.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/honey/Low-latency-networking-Projects/build/CMakeFiles --progress-num=9,10 "Finished codegen for target sender"
+.PHONY : CMakeFiles/sender.dir/codegen
+
+# clean rule for target.
+CMakeFiles/sender.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sender.dir/build.make CMakeFiles/sender.dir/clean
+.PHONY : CMakeFiles/sender.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/receiver.dir
+
+# All Build rule for target.
+CMakeFiles/receiver.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/receiver.dir/build.make CMakeFiles/receiver.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/receiver.dir/build.make CMakeFiles/receiver.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/honey/Low-latency-networking-Projects/build/CMakeFiles --progress-num=7,8 "Built target receiver"
+.PHONY : CMakeFiles/receiver.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/receiver.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/honey/Low-latency-networking-Projects/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/receiver.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/honey/Low-latency-networking-Projects/build/CMakeFiles 0
+.PHONY : CMakeFiles/receiver.dir/rule
+
+# Convenience name for target.
+receiver: CMakeFiles/receiver.dir/rule
+.PHONY : receiver
+
+# codegen rule for target.
+CMakeFiles/receiver.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/receiver.dir/build.make CMakeFiles/receiver.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/honey/Low-latency-networking-Projects/build/CMakeFiles --progress-num=7,8 "Finished codegen for target receiver"
+.PHONY : CMakeFiles/receiver.dir/codegen
+
+# clean rule for target.
+CMakeFiles/receiver.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/receiver.dir/build.make CMakeFiles/receiver.dir/clean
+.PHONY : CMakeFiles/receiver.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
