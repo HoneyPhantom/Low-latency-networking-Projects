@@ -194,6 +194,19 @@ receiver/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/receiver.dir/build.make CMakeFiles/receiver.dir/build
 .PHONY : receiver/fast
 
+#=============================================================================
+# Target rules for targets named P_receiver
+
+# Build rule for target.
+P_receiver: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 P_receiver
+.PHONY : P_receiver
+
+# fast build rule for target.
+P_receiver/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/P_receiver.dir/build.make CMakeFiles/P_receiver.dir/build
+.PHONY : P_receiver/fast
+
 client.o: client.cpp.o
 .PHONY : client.o
 
@@ -241,6 +254,30 @@ receiver.s: receiver.cpp.s
 receiver.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/receiver.dir/build.make CMakeFiles/receiver.dir/receiver.cpp.s
 .PHONY : receiver.cpp.s
+
+receiver_pipeline.o: receiver_pipeline.cpp.o
+.PHONY : receiver_pipeline.o
+
+# target to build an object file
+receiver_pipeline.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/P_receiver.dir/build.make CMakeFiles/P_receiver.dir/receiver_pipeline.cpp.o
+.PHONY : receiver_pipeline.cpp.o
+
+receiver_pipeline.i: receiver_pipeline.cpp.i
+.PHONY : receiver_pipeline.i
+
+# target to preprocess a source file
+receiver_pipeline.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/P_receiver.dir/build.make CMakeFiles/P_receiver.dir/receiver_pipeline.cpp.i
+.PHONY : receiver_pipeline.cpp.i
+
+receiver_pipeline.s: receiver_pipeline.cpp.s
+.PHONY : receiver_pipeline.s
+
+# target to generate assembly for a file
+receiver_pipeline.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/P_receiver.dir/build.make CMakeFiles/P_receiver.dir/receiver_pipeline.cpp.s
+.PHONY : receiver_pipeline.cpp.s
 
 sender.o: sender.cpp.o
 .PHONY : sender.o
@@ -346,6 +383,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... P_receiver"
 	@echo "... client"
 	@echo "... kqserver"
 	@echo "... nbserver"
@@ -358,6 +396,9 @@ help:
 	@echo "... receiver.o"
 	@echo "... receiver.i"
 	@echo "... receiver.s"
+	@echo "... receiver_pipeline.o"
+	@echo "... receiver_pipeline.i"
+	@echo "... receiver_pipeline.s"
 	@echo "... sender.o"
 	@echo "... sender.i"
 	@echo "... sender.s"

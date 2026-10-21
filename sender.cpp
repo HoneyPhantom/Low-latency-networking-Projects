@@ -7,7 +7,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
-#include "#MarketData.hpp"
+#include "#MarketDataParser.hpp"
 
 
 int main(int argc , char* argv[]) {
@@ -30,6 +30,9 @@ int main(int argc , char* argv[]) {
     inet_pton(AF_INET, "127.0.0.1", &destinationAddress.sin_addr);
 
     std::vector<char> payload(payloadSize, 'X');
+    const size_t packetSize = HeaderSize + payloadSize;
+    std::vector<char> packet(packetSize);
+    memcpy(packet.data() + HeaderSize , payload.data() , payloadSize);
     std::cout << "[Sender] Starting transmission: " << totalPackets 
               << " packets, Payload: " << payloadSize << " bytes, Mode: " 
               << (rateLimited ? "Rate-limited" : "Unpaced") << "\n";
@@ -41,14 +44,12 @@ int main(int argc , char* argv[]) {
         header.seqNum = i;
         header.timestamp = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
         header.magic = ExpectedMagic;
-        header.payloadLen = payload.size();
+        header.payloadLen = static_cast<uint16_t>(payloadSize);
         header.msgType = 1;
 
         MarketDataHeader netHeader = htonHeader(header);
-        std::vector<char> packet(HeaderSize + payload.size());
         memcpy(packet.data() , &netHeader , HeaderSize);
-        memcpy(packet.data() + HeaderSize , payload.data() , payload.size());
-        int sent = sendto(sock , packet.data() , packet.size() , 0 , (struct sockaddr*)&destinationAddress , sizeof(destinationAddress));
+        int sent = sendto(sock , packet.data() , packetSize , 0 , (struct sockaddr*)&destinationAddress , sizeof(destinationAddress));
         if (sent < 0) {
             std::cerr << "Sendto error at packet " << i << ": " << strerror(errno) << "\n";
         }

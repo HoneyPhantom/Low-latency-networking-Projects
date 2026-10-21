@@ -54,4 +54,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/nbserver.dir/DependInfo.cmake"
   "CMakeFiles/sender.dir/DependInfo.cmake"
   "CMakeFiles/receiver.dir/DependInfo.cmake"
+  "CMakeFiles/P_receiver.dir/DependInfo.cmake"
   )

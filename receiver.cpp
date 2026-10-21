@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
-#include "#MarketData.hpp"
+#include "#MarketDataParser.hpp"
 
 class SequenceTracker {
     uint64_t expectedSeq = 1;
@@ -41,7 +41,10 @@ public:
     }
 };
 
-int main() {
+int main(int argc , char* argv[]) {
+    int limit = 100000;
+    if (argc > 1) limit = std::stoi(argv[1]);
+
     int sock = socket(AF_INET , SOCK_DGRAM , 0);
     if (sock < 0) {
         std::cerr << "Receiver socket creation failed\n";
@@ -59,36 +62,27 @@ int main() {
     }
     std::cout << "[Receiver] Listening for market data on port 9000...\n";
 
+    MarketDataParser parser;
     SequenceTracker tracker;
-    std::vector<char> buffer(65543);
+    std::byte buffer[65543];
 
     while (true) {
-        ssize_t in = recvfrom(sock , buffer.data() , buffer.size() , 0 , nullptr , nullptr);
+        ssize_t in = recvfrom(sock , buffer , sizeof(buffer) , 0 , nullptr , nullptr);
         if (in < 0) {
             if (errno == EINTR) continue;
             break;
         }
 
-        if (static_cast<size_t>(in) < HeaderSize) {
-            tracker.reportMalformed();
-            continue;
-        }
+        std::span<const std::byte> rawPacket(buffer , static_cast<size_t>(in));
+        MarketDataMessage msg;
 
-        MarketDataHeader netHeader;
-        memcpy(&netHeader , buffer.data() , HeaderSize);
-        MarketDataHeader header = ntohHeader(netHeader);
-        if (header.magic != ExpectedMagic) {
+        if (parser.parse(rawPacket , msg) != ParseResult::Success) {
             tracker.reportMalformed();
             continue;
         }
-        size_t expectedLen = HeaderSize + header.payloadLen;
-        if (static_cast<size_t>(in) != expectedLen) {
-            tracker.reportMalformed();
-            continue;
-        }
-        tracker.recordPacket(header.seqNum);
+        tracker.recordPacket(msg.seqNum);
 
-        if (header.seqNum >= 100000) {
+        if (msg.seqNum >= static_cast<uint64_t>(limit)) {
             tracker.printstat();
             break;
         }
